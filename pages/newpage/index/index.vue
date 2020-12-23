@@ -268,7 +268,7 @@
 
 			},
 			strToStar(str){
-				return str.substr(0,4)+'***'+str.substr(5,str.split('').length)
+				return str.substr(0,4)+'***'+str.substr(7,str.split('').length)
 			}
 
 		}
