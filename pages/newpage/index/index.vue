@@ -92,7 +92,7 @@
 							<div style="text-align: center;margin:5px 0;font-weight: bold;color: rgba(0, 0, 0, 0.45)">抢单达人榜</div>
 							<ul>
 								<li v-for="(item,id) in qddrArr" :key="item.mobile">
-									<a>{{item.wx}}</a><a style="float: right;margin-right: 20px;font-size: 16px;font-weight: bold;">{{item.count_order}}单</a>
+									<a>{{strToStar(item.wx)}}</a><a style="float: right;margin-right: 20px;font-size: 16px;font-weight: bold;">{{item.count_order}}单</a>
 								</li>
 							</ul>
 						</div>
@@ -103,7 +103,7 @@
 							<div style="text-align: center;margin:5px 0;font-weight: bold;color: rgba(0, 0, 0, 0.45)">今日收益排行榜</div>
 							<ul>
 								<li v-for="(item,id) in zsyArr" :key="item.mobile">
-									<a>{{item.wx}}</a><a style="float: right;margin-right: 10px;font-size: 16px;font-weight: bold;">￥{{item.balance_today/100}}</a>
+									<a>{{strToStar(item.wx)}}</a><a style="float: right;margin-right: 10px;font-size: 16px;font-weight: bold;">￥{{item.balance_today/100}}</a>
 								</li>
 							</ul>
 						</div>
@@ -267,6 +267,9 @@
 					});
 
 			},
+			strToStar(str){
+				return str.substr(0,4)+'***'+str.substr(5,str.split('').length)
+			}
 
 		}
 	}
