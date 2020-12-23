@@ -1,3 +1,7 @@
-# uniCloud-admin
+# qxs background system
 
-> 基于 uni-app，uniCloud 的 admin 管理项目模板。[文档](https://uniapp.dcloud.io/uniCloud/admin)
+> 基于 uni-app 管理项目模板。
+> qxs 后台管理系统
+
+
+loxin 2020.12
