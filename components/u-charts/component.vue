@@ -155,15 +155,15 @@
 			
 			getData(){
 				db.collection("qxs-total-price")
-					.orderBy("create_date")
+					.orderBy("_id desc")
 					.limit(5)
 					.get()
 					.then((res) => {
 						//console.log(res)
 						for(let i=0;i<res.result.data.length;i++){
 							
-							this.newDataseries[0].data.push(res.result.data[i].price/100) 
-							this.newDatacategories.push(res.result.data[i].date) 
+							this.newDataseries[0].data.unshift(res.result.data[i].price/100) 
+							this.newDatacategories.unshift(res.result.data[i].date) 
 						}
 						this.changeData('aa',this.newDataseries,this.newDatacategories)
 						//console.log(this.LineList.opts)

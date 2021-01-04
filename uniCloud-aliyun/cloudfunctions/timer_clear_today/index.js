@@ -19,11 +19,16 @@ exports.main = async (event, context) => {
 	let month = now.getMonth()+1;
 	let date = now.getDate();
 	let today = year+"-"+month+"-"+date
+	let price = 0
+	
+	if (res.data){
+		price = res.data[0].count
+	}
 	
 	await db.collection('qxs-total-price').add({
-		date:today,
-		price:res.data[0].count
-	})
+			date:today,
+			price:price
+		})
 	
 	await db.collection('user-sort').update({
 		balance_today: dbCmd.set(0),
